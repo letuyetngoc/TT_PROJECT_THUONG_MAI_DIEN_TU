@@ -1,0 +1,27 @@
+// helpers
+@import './helpers/variables';
+@import './helpers/mixin';
+
+// vendors
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'antd/dist/antd.css';
+
+// base
+@import './reset';
+@import './component/flickity';
+// components
+
+// pages
+@import './page/ecommerce/login/loginEcom';
+@import './page/ecommerce/register/registerEcom';
+@import './page/ecommerce/store/store';
+@import './page/ecommerce/P2PTrading/P2PTrading';
+@import './page/ecommerce/P2PTrading/createBy';
+@import './page/ecommerce/P2PTrading/byCoin';
+@import './page/ecommerce/wallet/wallet';
+@import './page/ecommerce/withdraw/widthdraw';
+
+//template
+@import './template/ecommerceHomeTemplate/ecommerceHomeTemplate';
