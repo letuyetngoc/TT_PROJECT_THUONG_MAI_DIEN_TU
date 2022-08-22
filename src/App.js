@@ -1,18 +1,12 @@
+import GobalStyle from "./gobalStyle/GobalStyle";
 import { Route, Router, Switch } from "react-router-dom";
 //history
 import { createBrowserHistory } from "history";
 //page
-import GobalStyle from "./gobalStyle/GobalStyle";
-import EcommerceHomeTemplate from "./template/Ecommerce/EcommerceHomeTemplate";
-import HomeEcom from './page/Ecommerce/Home/HomeEcom'
-import Store from './page/Ecommerce/Store/Store'
-import LoginEcom from './page/Ecommerce/Login/LoginEcom'
-import RegisterEcom from './page/Ecommerce/Register/RegisterEcom'
-import P2PTrading from "./page/Ecommerce/P2PTrading/P2PTrading";
-import CreateBy from "./page/Ecommerce/P2PTrading/CreateBy";
-import BuyCoin from "./page/Ecommerce/P2PTrading/BuyCoin";
-import Wallet from "./page/Ecommerce/Wallet/Wallet";
-import WidthDraw from "./page/Ecommerce/WithDraw/WidthDraw";
+import HomeTemplate from "./template/HomeTemplate";
+import Login from "./page/Login/Login";
+import Register from "./page/Register/Register";
+import Store from "./page/Store/Store";
 
 export let history = createBrowserHistory();
 
@@ -22,7 +16,10 @@ function App() {
     <GobalStyle>
       <Router history={history}>
         <Switch>
-
+          {/* <Route exact path='' component={HomeTemplate} /> */}
+          <HomeTemplate exact path='/login' Component={Login} />
+          <HomeTemplate exact path='/register' Component={Register} />
+          <HomeTemplate exact path='/store' Component={Store} />
         </Switch>
       </Router>
     </GobalStyle>

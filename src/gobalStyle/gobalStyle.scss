@@ -10,18 +10,14 @@
 
 // base
 @import './reset';
-@import './component/flickity';
 // components
 
 // pages
-@import './page/ecommerce/login/loginEcom';
-@import './page/ecommerce/register/registerEcom';
-@import './page/ecommerce/store/store';
-@import './page/ecommerce/P2PTrading/P2PTrading';
-@import './page/ecommerce/P2PTrading/createBy';
-@import './page/ecommerce/P2PTrading/byCoin';
-@import './page/ecommerce/wallet/wallet';
-@import './page/ecommerce/withdraw/widthdraw';
+@import './page/login/login';
+@import './page/register/register';
+@import './page/store/store';
+
 
 //template
-@import './template/ecommerceHomeTemplate/ecommerceHomeTemplate';
+@import './template/homeTemplate';
+@import './template/header';
