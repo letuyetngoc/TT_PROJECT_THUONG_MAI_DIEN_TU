@@ -1,6 +1,5 @@
 .register {
-    padding-top: 200px;
-    padding-bottom: 20px;
+    padding: 200px 0;
     background-color: $gray;
 
     .register__container {
@@ -33,6 +32,8 @@
         .register__form {
             background-color: white;
             padding: 25px;
+            box-shadow: $shadow;
+            border-radius: 4px;
 
             form {
                 display: flex;
@@ -41,52 +42,6 @@
 
                 .register__field {
                     flex-basis: 50%;
-
-                    .register__field-item {
-                        margin-bottom: 25px;
-
-                        label {
-                            font-size: 1.2rem;
-                            height: 15px;
-                            line-height: 15px;
-                            overflow: hidden;
-                            color: #424242;
-                            display: block;
-                            margin-bottom: 5px;
-                        }
-
-                        input {
-                            width: 100%;
-                            border: 1px solid #ddd;
-                            font-size: 1.4rem;
-                            height: 40px;
-                            line-height: 38px;
-                            padding: 0 35px 0 10px;
-                            margin-bottom: 2px;
-                            outline: none;
-                        }
-
-                        button {
-                            display: block;
-                            margin: 0;
-                            height: 48px;
-                            padding: 0 36px;
-                            font-size: 14px;
-                            line-height: 46px;
-                            color: white;
-                            background-color: $orange;
-                            font-size: 1.6rem;
-                            border: none;
-                            width: 100%;
-                            border-radius: 4px;
-                            transition: $smooth;
-
-                            &:hover {
-                                background-color: #d0611e;
-                                transition: $smooth;
-                            }
-                        }
-                    }
                 }
 
                 .register__btn {
@@ -95,70 +50,6 @@
 
                     .btn_item {
                         margin: 5px;
-                        border-radius: 4px;
-
-                        .btn_email {
-                            background-color: transparent;
-                            border: 1px solid $orange;
-                            margin: 0;
-                            height: 48px;
-                            padding: 0 36px;
-                            font-size: 14px;
-                            line-height: 46px;
-                            color: $orange;
-                            font-size: 1.6rem;
-                            border-radius: 4px;
-                            cursor: pointer;
-                            transition: $smooth;
-
-
-                            &:hover {
-                                background-color: #feeade;
-                                transition: $smooth;
-                            }
-                        }
-
-                        .btn_facebook {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: #3b5998;
-                            margin: 0;
-                            height: 48px;
-                            padding: 0 36px;
-                            font-size: 14px;
-                            line-height: 46px;
-                            border-radius: 4px;
-                            color: white;
-                            font-size: 1.8rem;
-                            cursor: pointer;
-
-                            .icon {
-                                font-size: 2rem;
-                                margin-right: 10px;
-                            }
-                        }
-
-                        .btn_google {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: #d34836;
-                            margin: 0;
-                            height: 48px;
-                            border-radius: 4px;
-                            padding: 0 36px;
-                            font-size: 14px;
-                            line-height: 46px;
-                            color: white;
-                            font-size: 1.8rem;
-                            cursor: pointer;
-
-                            .icon {
-                                font-size: 2.5rem;
-                                margin-right: 10px;
-                            }
-                        }
                     }
 
                     .btn_bottom {

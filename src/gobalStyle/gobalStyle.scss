@@ -10,12 +10,18 @@
 
 // base
 @import './reset';
+
 // components
+@import './component/button';
+@import './component/input';
+@import './component/message';
 
 // pages
 @import './page/login/login';
 @import './page/register/register';
 @import './page/store/store';
+@import './page/verifyEmail/verifyEmail';
+@import './page/verifyEmail/guideVerifyEmail';
 
 
 //template

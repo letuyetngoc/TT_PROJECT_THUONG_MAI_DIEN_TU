@@ -1,4 +1,5 @@
 import swal from "sweetalert";
+import { message } from 'antd';
 
 export function errorMessage(title, text) {
     return swal({
@@ -8,7 +9,11 @@ export function errorMessage(title, text) {
         button: "Cancel",
     });
 }
-export function successMessage(title, text) {
+export function successMessage(text) {
+    return message.success(text);
+}
+
+export function successBigMessage(title, text) {
     return swal({
         title: title,
         text: text,

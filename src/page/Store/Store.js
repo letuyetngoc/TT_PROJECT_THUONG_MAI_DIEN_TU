@@ -1,5 +1,6 @@
 import React from 'react'
 import { AiOutlineDelete, AiOutlineHeart } from 'react-icons/ai'
+import { BsFillCartPlusFill } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
 
 export default function Store() {
@@ -71,12 +72,68 @@ export default function Store() {
                         <div className='summary_session_content'>
                             <div className='location__label'>Location</div>
                             <div className='location__body'>
-                                <GoLocation />
+                                <GoLocation className='icon' />
                                 <span>	Add Shipping Address</span>
                             </div>
                         </div>
                     </div>
-                    <div className='summary_session'></div>
+                    <div className='summary_session'>
+                        <div className='summary_session_main'>
+                            <div className='session__heading'>Order Summary</div>
+                            <div className='session__content'>
+                                <div className='checkout_summary_rows'>
+                                    <div className='checkout_summary_row'>
+                                        <div className='checkout_summary_label'>Subtotal (0 items)</div>
+                                        <div className='checkout_summary_value'>đ 0</div>
+                                    </div>
+                                    <div className='checkout_summary_row'>
+                                        <div className='checkout_summary_label'>Shipping Fee</div>
+                                        <div className='checkout_summary_value'>đ 0</div>
+                                    </div>
+                                </div>
+                                <div className='voucher_input'>
+                                    <input placeholder='Enter voucher code' />
+                                    <button>Apply</button>
+                                </div>
+                                <div className='checkout_order_total'>
+                                    <div className='checkout_order_total_row'>
+                                        <div className='checkout_order_total_title'>Total</div>
+                                        <div className='checkout_order_total_fee'>
+                                            đ 0
+                                            <small>VAT included, where applicable</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='btn_confirm'>
+                                    <button>Confirm card (0)</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='store__recomment'>
+                <div className='recomment_content'>
+                    <div className='recomment_title'>Just for you</div>
+                    <div className='recomment_products_list'>
+                        <div className='recomment_product_item'>
+                            <div className='product_img'>
+                                <img src='https://picsum.photos/200' alt='...' />
+                            </div>
+                            <div className='product_info'>
+                                <div className='product_title'>Kem Chống Nắng Anessa 60ml Perfect UV skincare nhật bản 50ml</div>
+                                <div className='product_price'>₫101,000</div>
+                                <div className='product_original_price'>
+                                    <span className='original_price'>đ 155,000</span>
+                                    <span className='discount'>- 35%</span>
+                                </div>
+                            </div>
+                            <div className='recomment_product_item_add_cart'>
+                                <BsFillCartPlusFill className='icon' />
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

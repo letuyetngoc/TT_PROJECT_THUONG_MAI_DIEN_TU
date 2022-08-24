@@ -1,0 +1,58 @@
+.inputComponent {
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 1.4rem;
+    height: 40px;
+    line-height: 38px;
+    padding: 0 35px 0 10px;
+    margin-bottom: 2px;
+    outline: none;
+    border-radius: 4px;
+
+    &:focus {
+        border-color: $light-orange;
+        box-shadow: 0 0 0 2px rgb(255 152 0 / 20%);
+        outline: 0;
+    }
+}
+
+.inputPasswordComponent {
+    position: relative;
+
+    input {
+        position: relative;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 1.4rem;
+        height: 40px;
+        line-height: 38px;
+        padding: 0 35px 0 10px;
+        margin-bottom: 2px;
+        outline: none;
+        border-radius: 4px;
+
+        &:focus {
+            border-color: $light-orange;
+            box-shadow: 0 0 0 2px rgb(255 152 0 / 20%);
+            outline: 0;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        font-size: 1.5rem;
+        color: $text-gray;
+        cursor: pointer;
+    }
+}
+
+.textErrorComponent {
+    min-height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    color: #f44336;
+    display: block;
+    margin-bottom: 0;
+}

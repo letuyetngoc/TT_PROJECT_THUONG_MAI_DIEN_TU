@@ -1,6 +1,5 @@
 .login {
-    padding-top: 200px;
-    padding-bottom: 20px;
+    padding: 200px 0;
     background-color: $gray;
 
     .login__container {
@@ -33,6 +32,8 @@
         .login__form {
             background-color: white;
             padding: 25px 50px 25px 50px;
+            box-shadow: $shadow;
+            border-radius: 4px;
 
             form {
                 display: flex;
@@ -43,33 +44,12 @@
                     flex-basis: 50%;
 
                     .login__field-item {
-                        margin-bottom: 25px;
-
-                        label {
-                            font-size: 1.2rem;
-                            height: 15px;
-                            line-height: 15px;
-                            overflow: hidden;
-                            color: #424242;
-                            display: block;
-                            margin-bottom: 5px;
-                        }
-
-                        input {
-                            width: 100%;
-                            border: 1px solid #ddd;
-                            font-size: 1.4rem;
-                            height: 40px;
-                            line-height: 38px;
-                            padding: 0 35px 0 10px;
-                            margin-bottom: 2px;
-                            outline: none;
-                        }
 
                         &.end {
                             margin-bottom: 0;
 
                             label {
+                                display: block;
                                 color: #049cb9;
                                 text-align: right;
                                 cursor: pointer;
@@ -88,80 +68,12 @@
 
                     .btn_item {
                         margin: 12px;
-                        border-radius: 4px;
-
-
 
                         p {
                             font-size: 1.2rem;
                             color: gray;
                         }
 
-                        button {
-                            width: 100%;
-                            border: none;
-
-                            .btn__login {
-                                margin: 0;
-                                height: 48px;
-                                padding: 0 36px;
-                                font-size: 14px;
-                                line-height: 46px;
-                                background-color: $orange;
-                                border-radius: 4px;
-                                color: white;
-                                text-transform: uppercase;
-                                transition: $smooth;
-
-                                &:hover {
-                                    background-color: #d0611e;
-                                    transition: $smooth;
-                                }
-                            }
-                        }
-
-                        .btn_facebook {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: #3b5998;
-                            margin: 0;
-                            height: 48px;
-                            padding: 0 36px;
-                            font-size: 14px;
-                            line-height: 46px;
-                            color: white;
-                            font-size: 1.8rem;
-                            border-radius: 4px;
-                            cursor: pointer;
-
-                            .icon {
-                                font-size: 2rem;
-                                margin-right: 10px;
-                            }
-
-                        }
-
-                        .btn_google {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: #d34836;
-                            margin: 0;
-                            height: 48px;
-                            padding: 0 36px;
-                            font-size: 14px;
-                            line-height: 46px;
-                            color: white;
-                            font-size: 1.8rem;
-                            border-radius: 4px;
-                            cursor: pointer;
-
-                            .icon {
-                                font-size: 2.5rem;
-                                margin-right: 10px;
-                            }
-                        }
                     }
 
 
