@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import FacebookLogin from 'react-facebook-login';
 
 //icon
 import { FaFacebookF, FaGooglePlusG } from 'react-icons/fa'
@@ -41,10 +42,23 @@ export default function Login() {
             } catch (error) {
                 console.log('error', error)
                 setIsLoading(false)
-                errorMessage('Error', error.response.data.message)
+                errorMessage('Error', error.response.data.message || error.message)
             }
         }
     }
+
+    const responseFacebook = (response) => {
+        console.log('responseFacebook', response);
+    }
+
+    // const loginFacebook = async () => {
+    //     try {
+    //         const result = await userService.loginFacebook()
+    //         console.log('resultLoginFacebook', result)
+    //     } catch (error) {
+    //         console.log('error', error)
+    //     }
+    // }
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -97,13 +111,14 @@ export default function Login() {
                                 <p>Or, login with</p>
                             </div>
                             <div className='btn_item'>
-                                <Button
-                                    bgColor='#3b5998'
-                                    bgColorHover='#3b5998bf'
-                                    border='none'
-                                    children='Facebook'
-                                    icon={<FaFacebookF />}
-                                    type='button'
+                                <FacebookLogin
+                                    appId="779851386692586"
+                                    autoLoad={false}
+                                    fields="name,email,picture"
+                                    // onClick={componentClicked}
+                                    callback={responseFacebook}
+                                    cssClass="myFacebookBtn"
+                                    icon={<FaFacebookF className='icon' />}
                                 />
                             </div>
                             <div className='btn_item'>

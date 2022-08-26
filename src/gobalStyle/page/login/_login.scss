@@ -74,6 +74,37 @@
                             color: gray;
                         }
 
+                        .myFacebookBtn {
+                            background-color: rgb(59, 89, 152);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            border: none;
+                            margin: 0;
+                            height: 40px;
+                            padding: 0 36px;
+                            color: color;
+                            font-size: 1.6rem;
+                            line-height: 46px;
+                            border-radius: 4px;
+                            text-transform: uppercase;
+                            font-weight: 400;
+                            outline: none;
+                            transition: $smooth;
+                            color: white;
+
+                            &:hover {
+                                background-color: #3b5998bf;
+                                transition: $smooth;
+                            }
+
+                            .icon {
+                                color: white;
+                                margin-right: 10px;
+                            }
+                        }
+
                     }
 
 

@@ -9,6 +9,9 @@ import Register from "./page/Register/Register";
 import Store from "./page/Store/Store";
 import VerifiEmail from "./page/VerifyEmail/VerifyEmail";
 import GuideVerifyEmail from "./page/VerifyEmail/GuideVerifyEmail";
+import { Checkbox, CheckboxComponent } from "./component/Checkbox";
+import Dropdown from "./component/Dropdown";
+import Home from "./page/Home/Home";
 
 export let history = createBrowserHistory();
 
@@ -22,10 +25,10 @@ function App() {
           <HomeTemplate exact path='/login' Component={Login} />
           <HomeTemplate exact path='/store' Component={Store} />
           <HomeTemplate exact path='/register' Component={Register} />
-
+          <HomeTemplate exact path='/home' Component={Home} />
           <Route exact path='/verify-account' component={GuideVerifyEmail} />
           <Route exact path='/verify/:token' component={VerifiEmail} />
-          <HomeTemplate exact path='' Component={Store} />
+          <HomeTemplate exact path='' Component={Home} />
         </Switch>
       </Router>
     </GobalStyle>

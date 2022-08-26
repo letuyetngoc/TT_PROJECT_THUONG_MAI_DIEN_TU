@@ -2,6 +2,10 @@ import BaseService from "./BaseService";
 
 class UserService extends BaseService {
 
+    user = () => {
+        return this.get('api/user')
+    }
+
     signup = (data) => {
         return this.post('api/user/signup', data)
     }
@@ -14,6 +18,9 @@ class UserService extends BaseService {
     }
     refreshToken = (data) => {
         return this.post('api/user/refreshToken', data)
+    }
+    loginFacebook = () => {
+        return this.get('api/user/login/facebook')
     }
 }
 export const userService = new UserService()

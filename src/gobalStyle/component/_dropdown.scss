@@ -1,0 +1,47 @@
+.dropdownComponent {
+    width: 20%;
+
+    .dropdownComponent__header {
+        width: 100%;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        height: 40px;
+        line-height: 38px;
+        padding: 0 10px 0 10px;
+        outline: none;
+        border-radius: 4px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &.active {
+            border-color: $light-orange;
+            box-shadow: 0 0 0 2px rgb(255 152 0 / 20%);
+            outline: 0;
+        }
+
+        .icon {
+            font-size: 1.8rem;
+        }
+
+        span {
+            font-size: 1.4rem;
+        }
+    }
+
+    .dropdownComponent__list {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-top: 0;
+
+        .list_item {
+            padding: 7px 10px;
+
+            &:hover {
+                background-color: $gray;
+                cursor: pointer;
+            }
+        }
+    }
+}

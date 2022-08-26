@@ -2,6 +2,7 @@ import React from 'react'
 import { AiOutlineDelete, AiOutlineHeart } from 'react-icons/ai'
 import { BsFillCartPlusFill } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
+import { Checkbox } from '../../component/Checkbox'
 
 export default function Store() {
     return (
@@ -10,8 +11,7 @@ export default function Store() {
                 <div className='store__list'>
                     <div className='list_header_main'>
                         <div className='list_header_checkbox'>
-                            <input type='checkbox' />
-                            <label>Select all (6 Item(s))</label>
+                            <Checkbox>Select all (6 Item(s))</Checkbox>
                         </div>
                         <div className='list_header_delete'>
                             <AiOutlineDelete className='icon' />
@@ -21,8 +21,7 @@ export default function Store() {
                     <div className='list_item'>
                         <div className='checkout_shop'>
                             <div className='checkbox'>
-                                <input type='checkbox' />
-                                <label>Hoàng Nhân Computer</label>
+                                <Checkbox>Hoàng Nhân Computer</Checkbox>
                             </div>
                             <div className='action'>
                                 <div>Get Voucher</div>
@@ -37,9 +36,7 @@ export default function Store() {
                         <div className='checkout_shop_children'>
                             <div className='cart_item'>
                                 <div className='cart_item_left'>
-                                    <div className='checkbox'>
-                                        <input type='checkbox' />
-                                    </div>
+                                    <Checkbox></Checkbox>
                                     <div className='img'>
                                         <img src='https://picsum.photos/200' />
                                     </div>

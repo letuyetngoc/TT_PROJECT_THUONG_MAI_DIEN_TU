@@ -56,6 +56,7 @@
                 font-size: 2.5rem;
                 font-weight: bold;
                 color: $white;
+                cursor: pointer;
             }
 
             .header__search {
@@ -161,26 +162,20 @@
             font-size: 1.4rem;
 
             .header__categories {
-                flex-basis: 20%;
-                color: $text-blue;
-                font-weight: 500;
-                cursor: pointer;
-                transition: $smooth;
-
-                &:hover {
-                    color: $white;
-                    transition: $smooth;
+                .ant-space-item {
+                    color: black;
+                    font-weight: 500;
 
                     .icon {
-                        transform: rotate(-90deg);
+                        transform: rotate(90deg);
+                        margin-left: 10px;
+                        font-weight: 500;
                     }
                 }
 
-                .icon {
-                    transform: rotate(90deg);
-                    margin-left: 10px;
-                    font-weight: 500;
-                }
+                flex-basis: 20%;
+                cursor: pointer;
+                transition: $smooth;
             }
 
             ul {
@@ -209,4 +204,12 @@
             cursor: pointer;
         }
     }
+}
+
+.anticon {
+    vertical-align: 0.2em;
+}
+
+.ant-rate-star.ant-rate-star-full {
+    margin: 0;
 }

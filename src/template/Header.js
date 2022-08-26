@@ -4,13 +4,73 @@ import { BsSearch } from 'react-icons/bs'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { MdArrowForwardIos, MdArrowDropDown } from 'react-icons/md'
 import { FiUser } from 'react-icons/fi'
+import { DownOutlined } from '@ant-design/icons';
 import { history } from '../App'
-import { Avatar, Badge, Popover } from 'antd'
+import { Avatar, Badge, Popover, Dropdown, Menu, Space } from 'antd'
 
 
 export default function Header() {
 
     const userLogin = JSON.parse(localStorage.getItem('USER_LOGIN'))
+
+    const menu = (
+        <Menu
+            items={[
+                {
+                    key: '1',
+                    label: 'Smart phone',
+                    children: [
+                        {
+                            key: '1-1',
+                            label: 'Samsung',
+                        },
+                        {
+                            key: '1-2',
+                            label: 'Iphone',
+                        },
+                    ],
+                },
+                {
+                    key: '2',
+                    label: 'Laptop',
+                    children: [
+                        {
+                            key: '2-1',
+                            label: 'Laptop 1',
+                        },
+                        {
+                            key: '2-2',
+                            label: 'Laptop 2',
+                        },
+                    ],
+                },
+                {
+                    key: '3',
+                    label: 'screen',
+                    children: [
+                        {
+                            key: '2-1',
+                            label: 'screen 1',
+                            children: [
+                                {
+                                    key: '2-1',
+                                    label: 'screen 1-1',
+                                },
+                                {
+                                    key: '2-2',
+                                    label: 'screen 1-2',
+                                },
+                            ],
+                        },
+                        {
+                            key: '2-2',
+                            label: 'sreen 2',
+                        },
+                    ],
+                },
+            ]}
+        />
+    );
 
     const renderAccount = () => {
         const content = (
@@ -74,7 +134,7 @@ export default function Header() {
                     </ul>
                 </div> */}
                 <div className='header__between'>
-                    <div className='header__brand'>Brand</div>
+                    <div className='header__brand' onClick={() => history.push('/home')}>Brand</div>
                     <div className='header__search'>
                         <input placeholder='Search in website' />
                         <div>
@@ -94,8 +154,14 @@ export default function Header() {
                 </div>
                 <div className='header__bottom'>
                     <div className='header__categories'>
-                        <span>Categories</span>
-                        <MdArrowForwardIos />
+                        <Dropdown overlay={menu}>
+                            <a onClick={(e) => e.preventDefault()}>
+                                <Space>
+                                    Categories
+                                    <MdArrowForwardIos className='icon' />
+                                </Space>
+                            </a>
+                        </Dropdown>
                     </div>
                     <ul>
                         <li>
