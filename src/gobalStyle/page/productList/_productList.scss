@@ -1,0 +1,23 @@
+.productList {
+    padding: 150px 0;
+    background-color: $gray;
+
+    .productList__container {
+        width: 1188px;
+        max-width: 100%;
+        margin: 0 auto;
+
+        h3 {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(117, 117, 117, 0.2);
+        }
+
+        .productList__list {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    }
+}

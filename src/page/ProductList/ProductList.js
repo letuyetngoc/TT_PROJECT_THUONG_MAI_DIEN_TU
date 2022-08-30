@@ -1,8 +1,37 @@
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import { Rate } from 'antd'
-import React from 'react'
-import { history } from '../App'
+import { history } from '../../../src/App'
+import { productService } from '../../service/ProductService'
 
-export default function CardItemHome() {
+export default function ProductList() {
+    const [productList, setPproductList] = useState()
+
+    useEffect(async () => {
+        try {
+            const result = await productService.getProducts()
+            const { data } = result.data || []
+            setPproductList(data)
+        } catch (error) {
+            console.log('error', error)
+        }
+
+    }, [])
+    return (
+        <div className='productList'>
+            <div className='productList__container'>
+                <h3>Product list</h3>
+                {productList && <div className='productList__list'>
+                    {productList.map(product => {
+                        return <CardItemHome key={product.id} product={product} />
+                    })}
+                </div>}
+            </div>
+        </div>
+    )
+}
+
+function CardItemHome({ product }) {
     return (
         <div className='cardItemHome' onClick={() => history.push('/product-detail')}>
             <div className='cardItemHome__container'>
@@ -10,9 +39,9 @@ export default function CardItemHome() {
                     <img src='https://picsum.photos/200' alt='...' />
                 </div>
                 <div className='card_content'>
-                    <div className='content_title'>[ miễn phí ship] Máy tính bảng lpad 4 wifi 4G sài sim 64GB BH 12 tháng</div>
+                    <div className='content_title'>{product.name}</div>
                     <div className='content_price'>
-                        <div className='price'>₫2,734,000</div>
+                        <div className='price'>{product.price}</div>
                         <div className='discount'><span>₫5,000,000</span> -45%</div>
                         <div className='rate'>
                             <div>

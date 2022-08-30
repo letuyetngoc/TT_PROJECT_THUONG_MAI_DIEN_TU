@@ -24,9 +24,15 @@ img {
 
 a {
     text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: inherit;
+    }
 }
 
-ul {
+ul,
+p {
     padding: 0;
     margin: 0;
 }

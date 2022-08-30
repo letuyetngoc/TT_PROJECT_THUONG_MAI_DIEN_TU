@@ -1,0 +1,241 @@
+.adminTemplate {
+    .adminTemplate__container {
+        position: relative;
+        width: 100%;
+
+        .adminTemplate__header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: calc(100% - 220px);
+            height: 60px;
+            background-color: $white;
+            box-shadow: $shadow;
+            transition: $smooth;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+
+            &.active {
+                width: calc(100% - 60px);
+                transition: $smooth;
+            }
+
+            .toggle_btn {
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 25px;
+                font-size: 1.8rem;
+                cursor: pointer;
+                transition: $smooth;
+
+                &:hover {
+                    color: $dark-orange;
+                    transform: scale(1.1);
+                    transition: $smooth;
+                }
+            }
+
+            .search {
+                position: relative;
+                flex-basis: 50%;
+                width: 100%;
+
+                .icon {
+                    position: absolute;
+                    top: 10px;
+                    left: 13px;
+                    font-size: 2rem;
+                    color: gray;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 5px 0;
+                    padding-left: 42px;
+                    height: 40px;
+                    border-radius: 30px;
+                    border: 1px solid orange;
+                    outline: none;
+                }
+            }
+
+            .avatar {
+                .icon {
+                    cursor: pointer;
+                    font-size: 4rem;
+                    margin-right: 8px;
+                    color: $orange;
+                    transition: $smooth;
+
+                    &:hover {
+                        color: $dark-orange;
+                        transition: $smooth;
+                    }
+                }
+            }
+        }
+
+        .adminTemplate__nav_left {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: $orange;
+            width: 220px;
+            box-shadow: $shadow;
+            transition: $smooth;
+
+            &.active {
+                width: 60px;
+                overflow: hidden;
+                transition: $smooth;
+            }
+
+            .nav_left {
+
+                .nav_left_item {
+                    display: inherit;
+                    position: relative;
+                    height: 40px;
+                    line-height: 40px;
+                    padding: 0 10px;
+                    padding-left: 0;
+                    color: white;
+                    cursor: pointer;
+
+                    &.nav_left_item_active {
+                        color: $dark-orange;
+                        background-color: $gray;
+
+                        .mainIcon {
+                            color: $dark-orange;
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        &:hover {
+                            background-color: transparent;
+                        }
+                    }
+
+                    &:hover {
+                        color: $dark-orange;
+                        background-color: $gray;
+                        transition: $smooth;
+
+                        .mainIcon {
+                            color: $dark-orange;
+                        }
+                    }
+
+                    .mainIcon {
+                        position: absolute;
+                        height: 40px;
+                        line-height: 36px;
+                        text-align: center;
+                        width: 60px;
+                        color: white;
+                        font-size: 2rem;
+                    }
+
+                    .title {
+                        padding-left: 60px;
+                        width: 220px;
+
+                        span {
+                            font-size: 1.5rem;
+                        }
+
+                        .iconArrow {
+                            font-size: 18px;
+                        }
+                    }
+
+                    &.logo {
+                        color: $white;
+                        margin: 20px 0;
+
+                        span {
+                            font-size: 2.5rem;
+                            font-weight: 500;
+                        }
+
+                        .mainIcon {
+                            font-size: 2.5rem;
+                            color: $white;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .adminTemplate__nav_right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60px;
+            height: 100%;
+            background-color: white;
+
+            .nav_right {
+                margin-top: 50px;
+
+                .nav_right_item {
+                    position: relative;
+                    height: 40px;
+                    line-height: 40px;
+                    padding: 0 10px;
+                    padding-left: 0;
+                    color: #858b9c;
+                    cursor: pointer;
+
+                    .mainIcon {
+                        position: absolute;
+                        height: 40px;
+                        line-height: 36px;
+                        text-align: center;
+                        width: 60px;
+                        color: #858b9c;
+                        font-size: 2rem;
+                    }
+
+                    &:hover {
+                        color: $dark-orange;
+                        background-color: $gray;
+
+                        .mainIcon {
+                            color: $dark-orange;
+                        }
+                    }
+                }
+            }
+        }
+
+        .adminTemplate__main {
+            width: 100%;
+            min-height: 100vh;
+            transition: $smooth;
+
+            .adminTemplate__main_content {
+                height: 100%;
+                width: calc(100% - 220px);
+                margin-left: 220px;
+                transition: $smooth;
+
+
+                &.active {
+                    width: calc(100% - 60px);
+                    margin-left: 60px;
+                    transition: $smooth;
+
+                }
+            }
+        }
+
+    }
+}

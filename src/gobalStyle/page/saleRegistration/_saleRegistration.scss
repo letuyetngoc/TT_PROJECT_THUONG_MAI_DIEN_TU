@@ -1,0 +1,69 @@
+.saleRegistration {
+    padding: 200px 0;
+    background-color: $gray;
+
+    .saleRegistration__container {
+        width: 60%;
+        margin: 0 auto;
+
+        .saleRegistration__title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+
+            h3 {
+                font-size: 2.3rem;
+                font-weight: 400;
+            }
+
+            p {
+                span {
+                    color: #1a9cb7;
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .saleRegistration__form {
+            background-color: white;
+            padding: 25px;
+            box-shadow: $shadow;
+            border-radius: 4px;
+
+            form {
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+
+                .saleRegistration__field {
+                    flex-basis: 50%;
+                }
+
+                .saleRegistration__btn {
+                    flex-basis: 50%;
+                    width: 100%;
+
+                    .text {
+                        text-align: left;
+                        color: #858b9c;
+                        font-size: 14px;
+                    }
+
+                    .btn_item {
+                        margin: 5px;
+                    }
+
+                    .btn_bottom {
+                        display: flex;
+                    }
+                }
+
+            }
+        }
+    }
+}

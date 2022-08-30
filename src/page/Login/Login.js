@@ -37,7 +37,7 @@ export default function Login() {
                 localStorage.setItem('USER_LOGIN', JSON.stringify(result.data.data))
                 localStorage.setItem('ACCESS_TOKEN', JSON.stringify(result.data.data.token))
 
-                history.push('/store')
+                history.push('/home')
 
             } catch (error) {
                 console.log('error', error)
@@ -68,7 +68,6 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // console.log('value', values)
         dispatch(login(values))
     }
     return (

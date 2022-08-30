@@ -7,6 +7,7 @@ import { FiUser } from 'react-icons/fi'
 import { DownOutlined } from '@ant-design/icons';
 import { history } from '../App'
 import { Avatar, Badge, Popover, Dropdown, Menu, Space } from 'antd'
+import { NavLink } from 'react-router-dom'
 
 
 export default function Header() {
@@ -157,7 +158,7 @@ export default function Header() {
                         <Dropdown overlay={menu}>
                             <a onClick={(e) => e.preventDefault()}>
                                 <Space>
-                                    Categories
+                                    <span>Categories</span>
                                     <MdArrowForwardIos className='icon' />
                                 </Space>
                             </a>
@@ -165,16 +166,10 @@ export default function Header() {
                     </div>
                     <ul>
                         <li>
-                            <a>LazMall</a>
+                            <NavLink to='/all-products' className='nav_item' activeClassName='nav_item_active'>All products</NavLink>
                         </li>
                         <li>
-                            <a>Vouchers</a>
-                        </li>
-                        <li>
-                            <a>Top up & ecoupon</a>
-                        </li>
-                        <li>
-                            <a>Lazgobal</a>
+                            <NavLink to='/saleRegistration' className='nav_item' activeClassName='nav_item_active'>Register seller</NavLink>
                         </li>
                     </ul>
                 </div>

@@ -188,7 +188,19 @@
                     display: inline-block;
                     padding: 0 20px;
 
-                    a {}
+                    .nav_item {
+                        color: black;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+
+                    .nav_item_active {
+                        color: white;
+                    }
+
+
                 }
             }
         }
