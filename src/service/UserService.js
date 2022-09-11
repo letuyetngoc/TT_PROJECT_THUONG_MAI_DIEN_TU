@@ -2,6 +2,10 @@ import BaseService from "./BaseService";
 
 class UserService extends BaseService {
 
+    constructor() {
+        super()
+    }
+
     user = () => {
         return this.get('api/user')
     }

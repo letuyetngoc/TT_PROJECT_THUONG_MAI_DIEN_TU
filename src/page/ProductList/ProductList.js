@@ -5,17 +5,16 @@ import { history } from '../../../src/App'
 import { productService } from '../../service/ProductService'
 
 export default function ProductList() {
-    const [productList, setPproductList] = useState()
+    const [productList, setProductList] = useState()
 
     useEffect(async () => {
         try {
             const result = await productService.getProducts()
             const { data } = result.data || []
-            setPproductList(data)
+            setProductList(data)
         } catch (error) {
             console.log('error', error)
         }
-
     }, [])
     return (
         <div className='productList'>
@@ -33,7 +32,10 @@ export default function ProductList() {
 
 function CardItemHome({ product }) {
     return (
-        <div className='cardItemHome' onClick={() => history.push('/product-detail')}>
+        <div className='cardItemHome' onClick={() => {
+            localStorage.setItem('productDetail', JSON.stringify(product))
+            history.push('/product-detail')
+        }}>
             <div className='cardItemHome__container'>
                 <div className='card_img'>
                     <img src='https://picsum.photos/200' alt='...' />

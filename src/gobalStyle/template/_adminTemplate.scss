@@ -107,6 +107,16 @@
                     color: white;
                     cursor: pointer;
 
+                    &::after {
+                        content: '';
+                        position: absolute;
+                    }
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                    }
+
                     &.nav_left_item_active {
                         color: $dark-orange;
                         background-color: $gray;

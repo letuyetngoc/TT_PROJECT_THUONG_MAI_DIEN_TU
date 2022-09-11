@@ -1,6 +1,5 @@
 .store {
-    padding: 0 80px;
-    padding-top: 170px;
+    padding: 170px 80px;
     background-color: $gray;
 
     .store__container {
@@ -9,6 +8,8 @@
         gap: 12px;
 
         .store__list {
+            flex: 1;
+
             .list_header_main {
                 background-color: white;
                 padding: 0 12px;
@@ -183,6 +184,10 @@
                             border: none;
                             line-height: 22px;
                             height: 30px;
+
+                            &:disabled {
+                                cursor: no-drop;
+                            }
 
                         }
 

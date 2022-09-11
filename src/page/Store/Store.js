@@ -1,13 +1,28 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { AiOutlineDelete, AiOutlineHeart } from 'react-icons/ai'
 import { BsFillCartPlusFill } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
 import { Checkbox } from '../../component/Checkbox'
+import { decrement, decrementAction, getCartAction, incrementAction } from '../../redux/actions/cartAction'
+import { history } from '../../App'
+import { FaArrowAltCircleDown } from 'react-icons/fa'
+
+const { sessionId } = JSON.parse(localStorage.getItem('USER_LOGIN')) || ''
 
 export default function Store() {
+    const dispatch = useDispatch()
+    const { arrCartItem } = useSelector(state => state.CartReducer)
+    // console.log('arrCardItem', arrCartItem)
+
+    useEffect(async () => {
+        dispatch(getCartAction(sessionId))
+    }, [])
+
     return (
         <div className='store'>
-            <div className='store__container'>
+            {arrCartItem ? <div className='store__container'>
                 <div className='store__list'>
                     <div className='list_header_main'>
                         <div className='list_header_checkbox'>
@@ -18,51 +33,65 @@ export default function Store() {
                             <span>Delete</span>
                         </div>
                     </div>
-                    <div className='list_item'>
-                        <div className='checkout_shop'>
-                            <div className='checkbox'>
-                                <Checkbox>Hoàng Nhân Computer</Checkbox>
-                            </div>
-                            <div className='action'>
-                                <div>Get Voucher</div>
-                            </div>
-                        </div>
-                        <div className='checkout_shop_progress'>
-                            <div className='checkout_shop_progress_value'></div>
-                        </div>
-                        <div className='checkout_shop_delivery'>
-                            <div>Spend ₫ 299,000 enjoy shipping fee ₫ 5,000 off for Standard delivery option</div>
-                        </div>
-                        <div className='checkout_shop_children'>
-                            <div className='cart_item'>
-                                <div className='cart_item_left'>
-                                    <Checkbox></Checkbox>
-                                    <div className='img'>
-                                        <img src='https://picsum.photos/200' />
+                    {arrCartItem && arrCartItem.items.map((item, index) => {
+                        return (
+                            <div className='list_item' key={index}>
+                                <div className='checkout_shop'>
+                                    <div className='checkbox'>
+                                        <Checkbox>{item.product.name}</Checkbox>
                                     </div>
-                                    <div className='content'>
-                                        <a className='content1'>[HCM]Micro có dây jack 6.5 ly dành cho loa bluetooth có kèm chức năng hát karaoke P88P89</a>
-                                        <br />
-                                        <a className='content2'>No Brand, Color Family: Black</a>
-                                        <br />
-                                        <div className='good_desc'>Over ₫ 59,000 to get free gift</div>
-                                    </div>
-                                </div>
-                                <div className='cart_item_middle'>
-                                    <div className='current_price'>₫ 31,360</div>
                                     <div className='action'>
-                                        <AiOutlineDelete className='icon_delete' />
-                                        <AiOutlineHeart className='icon_heart' />
+                                        <div>Get Voucher</div>
                                     </div>
                                 </div>
-                                <div className='cart_item_right'>
-                                    <button className='btn_sub'>-</button>
-                                    <span>1</span>
-                                    <button className='btn_add'>+</button>
+                                <div className='checkout_shop_progress'>
+                                    <div className='checkout_shop_progress_value'></div>
+                                </div>
+                                <div className='checkout_shop_delivery'>
+                                    <div>Spend ₫ 299,000 enjoy shipping fee ₫ 5,000 off for Standard delivery option</div>
+                                </div>
+                                <div className='checkout_shop_children'>
+                                    <div className='cart_item'>
+                                        <div className='cart_item_left'>
+                                            <Checkbox></Checkbox>
+                                            <div className='img'>
+                                                <img src='https://picsum.photos/200' />
+                                            </div>
+                                            <div className='content'>
+                                                <a className='content1'>[HCM]Micro có dây jack 6.5 ly dành cho loa bluetooth có kèm chức năng hát karaoke P88P89</a>
+                                                <br />
+                                                <a className='content2'>No Brand, Color Family: Black</a>
+                                                <br />
+                                                <div className='good_desc'>Over ₫ 59,000 to get free gift</div>
+                                            </div>
+                                        </div>
+                                        <div className='cart_item_middle'>
+                                            <div className='current_price'>₫ {item.product.price}</div>
+                                            <div className='action'>
+                                                <AiOutlineDelete className='icon_delete' />
+                                                <AiOutlineHeart className='icon_heart' />
+                                            </div>
+                                        </div>
+                                        <div className='cart_item_right'>
+                                            <button className='btn_sub' onClick={() => {
+                                                dispatch(decrementAction({
+                                                    sku: item.sku,
+                                                    sessionId: sessionId
+                                                }))
+                                            }}>-</button>
+                                            <span>{item.quantity}</span>
+                                            <button className='btn_add' onClick={() => {
+                                                dispatch(incrementAction({
+                                                    sku: item.sku,
+                                                    sessionId: sessionId
+                                                }))
+                                            }}>+</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        )
+                    })}
                 </div>
                 <div className='store__checkout'>
                     <div className='summary_session'>
@@ -102,13 +131,13 @@ export default function Store() {
                                     </div>
                                 </div>
                                 <div className='btn_confirm'>
-                                    <button>Confirm card (0)</button>
+                                    <button onClick={() => history.push('/checkout-info')}>Confirm card (0)</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> : <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>There are no items in this cart</p>}
             <div className='store__recomment'>
                 <div className='recomment_content'>
                     <div className='recomment_title'>Just for you</div>

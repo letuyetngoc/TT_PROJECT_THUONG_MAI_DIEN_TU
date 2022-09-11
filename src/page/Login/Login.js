@@ -35,7 +35,7 @@ export default function Login() {
                 successMessage(result.data.message)
 
                 localStorage.setItem('USER_LOGIN', JSON.stringify(result.data.data))
-                localStorage.setItem('ACCESS_TOKEN', JSON.stringify(result.data.data.token))
+                localStorage.setItem('ACCESS_TOKEN', result.data.data.token)
 
                 history.push('/home')
 

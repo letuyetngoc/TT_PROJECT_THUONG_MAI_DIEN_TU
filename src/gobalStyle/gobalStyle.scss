@@ -20,6 +20,7 @@
 @import './component/dropdown';
 @import './component/cardItemHome';
 @import './page/productDetail/productDetail';
+@import './component/myComponent';
 
 // pages
 @import './page/login/login';
@@ -30,6 +31,8 @@
 @import './page/home/home';
 @import './page/saleRegistration/saleRegistration';
 @import './page/productList/productList';
+@import './page/order/CheckoutInfo.scss';
+@import './page/order/myListOrders.scss';
 
 @import './page/admin/createProduct';
 

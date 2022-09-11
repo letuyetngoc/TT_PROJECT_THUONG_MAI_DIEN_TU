@@ -1,0 +1,240 @@
+ .myComponent {
+     .myComponent__container {
+         position: relative;
+
+         .myComponent__navigation {
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 250px;
+             height: 100vh;
+             overflow: hidden;
+             background-color: #236bdc;
+             border-left: 5px solid transparent;
+             transition: all 0.3s ease;
+
+             &.active {
+                 transform: translateX(0);
+                 width: 60px;
+                 transition: all 0.3s ease;
+             }
+
+             ul {
+
+                 li {
+                     position: relative;
+
+                     font-size: 15px;
+                     padding: 10px;
+                     color: white;
+                     border-radius: 30px 0 0 30px;
+                     cursor: pointer;
+
+                     &:nth-child(1) {
+                         font-size: 20px;
+                         font-weight: 500;
+                         padding-bottom: 20px;
+
+                         &:hover {
+                             color: white;
+                             background-color: transparent;
+
+                             &::after {
+                                 content: none;
+                             }
+
+                             &::before {
+                                 content: none;
+                             }
+                         }
+
+                     }
+
+                     &:hover {
+                         background-color: white;
+                         color: #236bdc;
+
+                         &::after {
+                             content: "";
+                             position: absolute;
+                             width: 40px;
+                             height: 40px;
+                             background-color: transparent;
+                             bottom: -40px;
+                             right: 0;
+                             border-radius: 50%;
+                             box-shadow: 20px -20px 0 0 white;
+                         }
+
+                         &::before {
+                             content: "";
+                             position: absolute;
+                             width: 40px;
+                             height: 40px;
+                             background-color: transparent;
+                             top: -40px;
+                             right: 0;
+                             border-radius: 50%;
+                             box-shadow: 20px 20px 0 0 white;
+                         }
+                     }
+
+                     a {
+                         display: flex;
+                         align-items: center;
+
+                         .icon {
+                             display: inline-block;
+                             font-size: 20px;
+                             width: 30px;
+                             height: 30px;
+                             text-align: center;
+                             line-height: 23px;
+
+                         }
+
+                         .title {
+                             position: absolute;
+                             display: inline-block;
+                             left: 60px;
+                             width: 190px;
+                         }
+                     }
+                 }
+             }
+         }
+
+         .myComponent__header {
+             position: absolute;
+             width: calc(100% - 250px);
+             height: 50px;
+             left: 250px;
+             padding: 0 10px;
+             box-shadow: 0 7px 29px 0 hsl(240deg 5% 41% / 20%);
+
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             transition: all 0.3s ease;
+
+             &.active {
+                 width: calc(100% - 60px);
+                 left: 60px;
+                 transition: all 0.3s ease;
+             }
+
+             .toggle_btn {
+                 width: 30px;
+                 height: 30px;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 font-size: 25px;
+                 cursor: pointer;
+
+                 &:hover {
+                     color: #236bdc;
+                 }
+             }
+
+             .search {
+                 position: relative;
+                 flex-basis: 400px;
+
+                 .icon_search {
+                     position: absolute;
+                     top: 8px;
+                     left: 8px;
+                     font-size: 20px;
+                 }
+
+                 input {
+                     padding: 5px;
+                     padding-left: 35px;
+                     border: 1px solid #236bdc;
+                     border-radius: 30px;
+                     outline: none;
+                     width: 100%;
+                 }
+             }
+
+             .avatar {
+                 width: 40px;
+                 height: 40px;
+                 font-size: 35px;
+                 color: #236bdc;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+             }
+         }
+     }
+ }
+
+ //  responsive
+
+ @media only screen and (max-width: 992px) {
+     .myComponent {
+         .myComponent__container {
+             .myComponent__navigation {
+                 width: 60px;
+
+                 &.active {
+                     width: 250px;
+                     transition: all 0.3s ease;
+                 }
+             }
+
+             .myComponent__header {
+                 width: calc(100% - 60px);
+                 left: 60px;
+
+                 .search {
+                     flex-basis: 400px;
+                 }
+
+                 &.active {
+                     width: calc(100% - 250px);
+                     left: 250px;
+                     transition: all 0.3s ease;
+                 }
+             }
+         }
+     }
+ }
+
+ @media only screen and (max-width: 600px) {
+     .myComponent {
+         .myComponent__container {
+             .myComponent__navigation {
+                 transform: translateX(-250px);
+
+                 &.active {
+                     transform: translateX(0);
+                     width: 250px;
+                     transition: all 0.3s ease;
+                 }
+             }
+
+             .myComponent__header {
+                 width: 100%;
+                 left: 0;
+
+                 .search {
+                     flex-basis: 200px;
+                 }
+
+                 &.active {
+                     width: calc(100% - 250px);
+                     left: 250px;
+                     transition: all 0.3s ease;
+
+                     .search {
+                         display: none;
+                     }
+
+                 }
+             }
+         }
+     }
+ }

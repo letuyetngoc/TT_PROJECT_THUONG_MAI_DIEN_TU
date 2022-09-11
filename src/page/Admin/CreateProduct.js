@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../../component/Button'
 import { GroupItem, Input, Label } from '../../component/Input'
+import { successMessage } from '../../component/message'
 import { productService } from '../../service/ProductService'
 
 export default function CreateProduct() {
@@ -27,12 +28,12 @@ export default function CreateProduct() {
         e.preventDefault()
         console.log('values', values)
         try {
-            const result = await productService.createProduct(values)
+            const result = await productService.createProduct(values) ?? {}
             console.log('result', result)
+            successMessage(result?.data?.message)
         } catch (error) {
             console.log('error', error)
         }
-
     }
 
     return (

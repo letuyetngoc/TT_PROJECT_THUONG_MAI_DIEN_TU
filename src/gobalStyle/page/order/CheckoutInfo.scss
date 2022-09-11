@@ -1,0 +1,195 @@
+.checkoutInfo {
+    padding: 150px 0;
+    background-color: $gray;
+
+    .checkoutInfo__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        .checkoutInfo__delivery {
+            flex: 1;
+            background-color: white;
+            box-shadow: $shadow;
+            border-radius: 4px;
+            padding: 30px;
+
+            h3 {
+                padding-bottom: 20px;
+                margin: 0;
+            }
+
+            .delivery__content {
+                form {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 30px;
+
+                    .delivery_left {
+                        flex: 1;
+                    }
+
+                    .delivery_right {
+                        flex: 1;
+                    }
+                }
+            }
+        }
+
+        .checkoutInfo__payment {
+            flex-basis: 388px;
+            background-color: white;
+            box-shadow: $shadow;
+            border-radius: 4px;
+            padding: 10px;
+
+            .payment__checkout {
+                width: 388px;
+                background-color: #fff;
+
+
+                .summary_session {
+                    padding: 16px 12px 0;
+                    font-size: 1.2rem;
+
+                    .summary_session_content {
+                        border-bottom: 1px solid #eff0f5;
+                        padding-bottom: 16px;
+
+                        .location__label {
+                            color: $text-gray;
+                            font-size: 1.6rem;
+                        }
+
+                        .location__body {
+                            margin-top: 10px;
+
+                            .icon {
+                                margin-right: 5px;
+                            }
+
+                            span {}
+                        }
+                    }
+
+                    .summary_session_main {
+                        .session__heading {
+                            font-size: 1.8rem;
+                            font-weight: 500;
+                            margin-bottom: 1.6rem;
+                        }
+
+                        .session__content {
+                            .checkout_summary_rows {
+                                .checkout_summary_row {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    margin-bottom: 1.6rem;
+                                    font-size: 1.4rem;
+
+                                    .checkout_summary_label {
+                                        color: $text-gray;
+                                    }
+
+                                    .checkout_summary_value {}
+                                }
+                            }
+
+                            .voucher_input {
+                                display: flex;
+                                gap: 10px;
+                                margin-bottom: 16px;
+
+                                input {
+                                    height: 40px;
+                                    width: 100%;
+                                    outline: none;
+                                    font-size: 1.4rem;
+                                    padding: 0 8px;
+                                }
+
+                                button {
+                                    border: none;
+                                    height: auto;
+                                    line-height: 40px;
+                                    width: 104px;
+                                    display: block;
+                                    background-color: #1a9cb7;
+                                    color: #fff;
+                                    font-size: 1.4rem;
+                                    font-weight: 500;
+                                    text-transform: uppercase;
+                                    padding: 0;
+                                    border-radius: 4px;
+                                    transition: $smooth;
+
+
+                                    &:hover {
+                                        background-color: #21b7d1;
+                                        transition: $smooth;
+                                    }
+                                }
+                            }
+
+                            .checkout_order_total {
+                                .checkout_order_total_row {
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .checkout_order_total_title {
+                                        font-size: 1.6rem;
+                                        font-weight: 500;
+                                    }
+
+                                    .checkout_order_total_fee {
+                                        text-align: right;
+                                        font-size: 1.8rem;
+                                        color: #f57224;
+
+                                        small {
+                                            display: block;
+                                            font-size: 1.2rem;
+                                            color: black;
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                            .btn_confirm {
+                                margin: 16px 0;
+
+                                button {
+                                    display: block;
+                                    border: none;
+                                    width: 100%;
+                                    height: 40px;
+                                    line-height: 14px;
+                                    padding: 0 36px;
+                                    font-size: 14px;
+                                    background-color: #f57224;
+                                    color: white;
+                                    font-size: 1.4 rem;
+                                    text-transform: uppercase;
+                                    border-radius: 4px;
+                                    transition: $smooth;
+
+                                    &:hover {
+                                        background-color: #d0611e;
+                                        transition: $smooth;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

@@ -4,7 +4,6 @@ import { BsSearch } from 'react-icons/bs'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { MdArrowForwardIos, MdArrowDropDown } from 'react-icons/md'
 import { FiUser } from 'react-icons/fi'
-import { DownOutlined } from '@ant-design/icons';
 import { history } from '../App'
 import { Avatar, Badge, Popover, Dropdown, Menu, Space } from 'antd'
 import { NavLink } from 'react-router-dom'
@@ -76,7 +75,7 @@ export default function Header() {
     const renderAccount = () => {
         const content = (
             <div className='account_hover'>
-                <p>Track my order</p>
+                <p onClick={() => history.push('/my-orders')}>Track my order</p>
                 <p>My account</p>
                 <p onClick={() => {
                     localStorage.removeItem('USER_LOGIN')

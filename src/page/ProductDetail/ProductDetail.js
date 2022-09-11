@@ -4,10 +4,55 @@ import { BsShare, BsHeart } from 'react-icons/bs'
 import { AiOutlineInfoCircle, AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { useState } from 'react'
 import Button from '../../component/Button'
+import { history } from '../../App'
+import { productService } from '../../service/ProductService'
+import { errorMessage, successMessage } from '../../component/message'
+import { useDispatch } from 'react-redux'
+import { cartService } from '../../service/CartService'
+import { getCartAction } from '../../redux/actions/cartAction'
 
 export default function ProductDetail() {
+    const { sessionId } = JSON.parse(localStorage.getItem('USER_LOGIN'))
+
+    const dispatch = useDispatch()
+
+    const [valueAddToCard, setValuesAddToCard] = useState({
+        sku: "",
+        quantity: 1,
+        sessionId: sessionId
+    })
+
     const [valueNumber, setValueNumber] = useState(1)
     const disableMinusBtn = valueNumber == 1 ? 'disabled' : ''
+
+    const addtocartAction = (data) => {
+        return async () => {
+            try {
+                const result = await cartService.addtocart(data)
+                const { message } = result.data || ''
+                successMessage(message)
+
+            } catch (errors) {
+                console.log('error', errors)
+                errorMessage('Error', errors.response?.data?.errors)
+            }
+        }
+
+    }
+
+    const handleAddToCard = async () => {
+        const productDetail = JSON.parse(localStorage.getItem('productDetail'))
+
+        valueAddToCard.sku = productDetail.sku
+        valueAddToCard.quantity = valueNumber
+        setValuesAddToCard({ ...valueAddToCard })
+
+        dispatch(addtocartAction(valueAddToCard))
+        dispatch(getCartAction(sessionId))
+
+        // history.push('/store')
+    }
+
     return (
         <div className='productDetail'>
             <div className='productDetail__container'>
@@ -74,6 +119,7 @@ export default function ProductDetail() {
                             border='none'
                             children='Login'
                             type='submit'
+                            onClick={handleAddToCard}
                         >Add to cart</Button>
                     </div>
                 </div>

@@ -38,18 +38,18 @@ const checkToken = async () => {
 export default class BaseService {
     constructor() {
     }
-    get = async (url) => {
-        await checkToken()
+    get = (url) => {
+        // await checkToken()
         return axios({
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`,
             },
             url: `${DOMAIN}/${url}`,
-            method: 'GET'
+            method: 'GET',
         })
     }
-    post = async (url, data) => {
-        await checkToken()
+    post = (url, data) => {
+        // await checkToken()
         return axios({
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`,
